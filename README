@@ -14,7 +14,7 @@ As mentioned above, the paypalnvp library does not attempt to abstract
 the underlying concepts away from the developer. Usage is as easy as
 creating an associative array of key => value pairs per the official
 PayPal reference, instantiating a new PayPal(user, pass, sig) object
-with the NVP credentials, then calling the desired method. 
+with the NVP credentials, then calling the desired method.
 
 Internally, the paypalnvp library takes care of the authentication,
 version, and method NVP key-value pairs. You only need to supply the
@@ -22,20 +22,21 @@ method-specific key-value pairs. The library takes care of all
 case-sensitivity related issues for the key value, as well as any and
 all encoding-related issues for both the key and the value.
 
-For instance, the following is a sample usage of the SetExpressCheckout
-API call:
+For instance, the following is a sample usage of the
+GetExpressCheckoutDetails API call:
 
 	$paypal = new PayPal(YOUR_USER, YOUR_PASS, YOUR_SIGNATURE);
-
+	
 	$fields = array(
 		"Token" => $token
 	);
-
+	
 	$result = $paypal->GetExpressCheckoutDetails($fields);
-
+	
 	$invoice = $result['INVNUM'];
 	$email   = $result['EMAIL'];
 	$first   = $result['FIRSTNAME'];
 	$last    = $result['LASTNAME'];
 
-All the code is contained within PayPal.php in the neosmart namespace.
+All the code is contained within PayPal.php and is in the neosmart
+namespace.
