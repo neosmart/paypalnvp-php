@@ -98,6 +98,12 @@ namespace neosmart
 			$method = "DoExpressCheckoutPayment";
 			return $this->GenericNvp($method, $fields);
 		}
+		
+		public function RefundTransaction($fields)
+		{
+			$method = "RefundTransaction";
+			return $this->GenericNvp($method, $fields);
+		}
 	}
 }
 
