@@ -35,8 +35,6 @@ namespace neosmart
 				$nvpstr .= sprintf("%s=%s&", urlencode(strtoupper($key)), urlencode($value));
 			}
 
-			$nvpstr = rtrim($nvpstr, "&");
-
 			return $nvpstr;
 		}
 
