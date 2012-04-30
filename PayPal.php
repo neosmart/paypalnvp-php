@@ -13,7 +13,7 @@ namespace neosmart
 	{
 		var $ppVersion = 87.0;
 		
-		var $ppEndpoint
+		var $ppEndpoint;
 		var $user;
 		var $pass;
 		var $sig;
