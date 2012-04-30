@@ -80,7 +80,8 @@ namespace neosmart
 			return $fields;
 		}
 
-		//Convenience functions
+		//Explicit convenience functions
+		//Will be removed soon
 		public function SetExpressCheckout($fields)
 		{
 			$method = "SetExpressCheckout";
@@ -102,6 +103,12 @@ namespace neosmart
 		public function RefundTransaction($fields)
 		{
 			$method = "RefundTransaction";
+			return $this->GenericNvp($method, $fields);
+		}
+
+		//Implicit convenience functions
+		public function __call($method, $fields)
+		{
 			return $this->GenericNvp($method, $fields);
 		}
 	}
