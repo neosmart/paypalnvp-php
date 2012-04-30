@@ -55,7 +55,7 @@ namespace neosmart
 			return $fields;
 		}
 
-		public function GenericNvp($method, $fields)
+		private function GenericNvp($method, $fields)
 		{
 			$fields["USER"] = $this->user;
 			$fields["PWD"] = $this->pass;
@@ -80,33 +80,8 @@ namespace neosmart
 			return $fields;
 		}
 
-		//Explicit convenience functions
-		//Will be removed soon
-		public function SetExpressCheckout($fields)
-		{
-			$method = "SetExpressCheckout";
-			return $this->GenericNvp($method, $fields);
-		}
-
-		public function GetExpressCheckoutDetails($fields)
-		{
-			$method = "GetExpressCheckoutDetails";
-			return $this->GenericNvp($method, $fields);
-		}
-
-		public function DoExpressCheckoutPayment($fields)
-		{
-			$method = "DoExpressCheckoutPayment";
-			return $this->GenericNvp($method, $fields);
-		}
-		
-		public function RefundTransaction($fields)
-		{
-			$method = "RefundTransaction";
-			return $this->GenericNvp($method, $fields);
-		}
-
-		//Implicit convenience functions
+		//Implicit convenience functions helper
+		//Calling $PayPal->MethodName($fields) automatically translates to an NVP call
 		public function __call($method, $fields)
 		{
 			return $this->GenericNvp($method, $fields);
