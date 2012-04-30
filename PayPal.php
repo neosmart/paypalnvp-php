@@ -12,18 +12,18 @@ namespace neosmart
 	class PayPal
 	{
 		var $ppVersion = 87.0;
-		var $ppEndpoint = "https://api-3t.paypal.com/nvp";
-		//var $ppEndpoint = "https://api-3t.sandbox.paypal.com/nvp";
-
+		
+		var $ppEndpoint;
 		var $user;
 		var $pass;
 		var $sig;
 
-		public function __construct($user, $pass, $signature)
+		public function __construct($user, $pass, $signature, $sandbox = false)
 		{
 			$this->user = $user;
 			$this->pass = $pass;
 			$this->sig = $signature;
+			$this->ppEndpoint = ($sandbox) ? "https://api-3t.sandbox.paypal.com/nvp" : "https://api-3t.paypal.com/nvp";
 		}
 		
 		private function EncodeNvpString($fields)
