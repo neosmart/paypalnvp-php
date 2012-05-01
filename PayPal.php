@@ -82,7 +82,7 @@ namespace neosmart
 		//Calling $PayPal->MethodName($fields) automatically translates to an NVP call
 		public function __call($method, $fields)
 		{
-			return $this->GenericNvp($method, $fields);
+			return $this->GenericNvp($method, $fields[0]);
 		}
 	}
 }
