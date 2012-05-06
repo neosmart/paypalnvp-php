@@ -25,18 +25,18 @@ all encoding-related issues for both the key and the value.
 For instance, the following is a sample usage of the
 GetExpressCheckoutDetails API call:
 
-	$paypal = new PayPal(YOUR_USER, YOUR_PASS, YOUR_SIGNATURE);
-	
-	$fields = array(
-		"Token" => $token
-	);
-	
-	$result = $paypal->GetExpressCheckoutDetails($fields);
-	
-	$invoice = $result['INVNUM'];
-	$email   = $result['EMAIL'];
-	$first   = $result['FIRSTNAME'];
-	$last    = $result['LASTNAME'];
+    $paypal = new PayPal(YOUR_USER, YOUR_PASS, YOUR_SIGNATURE);
+    
+    $fields = array(
+        "Token" => $token
+    );
+    
+    $result = $paypal->GetExpressCheckoutDetails($fields);
+    
+    $invoice = $result['INVNUM'];
+    $email   = $result['EMAIL'];
+    $first   = $result['FIRSTNAME'];
+    $last    = $result['LASTNAME'];
 
 All the code is contained within PayPal.php and is in the neosmart
 namespace.
